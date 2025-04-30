@@ -13,12 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.resource.storage.api;
+package io.gravitee.resource.storage.api.exception;
 
-import io.gravitee.resource.api.AbstractConfigurableResource;
-import io.gravitee.resource.api.ResourceConfiguration;
+import java.io.Serial;
 
-public abstract class StorageResource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
+public class NotFoundStorageException extends StorageException {
 
-    public abstract Storage getStorage();
+    @Serial
+    private static final long serialVersionUID = -7591604151418892191L;
+
+    public NotFoundStorageException(String message) {
+        super(message);
+    }
 }

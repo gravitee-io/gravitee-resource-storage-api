@@ -15,10 +15,19 @@
  */
 package io.gravitee.resource.storage.api;
 
-import io.gravitee.resource.api.AbstractConfigurableResource;
-import io.gravitee.resource.api.ResourceConfiguration;
+import io.gravitee.gateway.api.buffer.Buffer;
+import io.gravitee.resource.storage.api.exception.StorageException;
 
-public abstract class StorageResource<C extends ResourceConfiguration> extends AbstractConfigurableResource<C> {
+public record ReadResult(Buffer content, StorageException storageException) {
+    public static ReadResult createSuccess(Buffer content) {
+        return new ReadResult(content, null);
+    }
 
-    public abstract Storage getStorage();
+    public static ReadResult createError(StorageException storageException) {
+        return new ReadResult(null, storageException);
+    }
+
+    public boolean isSuccess() {
+        return storageException == null;
+    }
 }
