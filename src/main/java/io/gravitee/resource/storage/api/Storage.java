@@ -15,6 +15,40 @@
  */
 package io.gravitee.resource.storage.api;
 
-import java.util.Map;
+import io.gravitee.gateway.api.buffer.Buffer;
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Single;
 
-public interface Storage<T> {}
+public interface Storage {
+    /**
+     * Write a buffer to the storage. Use the default location.
+     * @param key The saved buffer path
+     * @param buffer The buffer to save
+     * @return {@link WriteResult}
+     */
+    Single<@NonNull WriteResult> write(String key, Buffer buffer);
+
+    /**
+     * Write a buffer to the storage. Use the specified location.
+     * @param locationName The location name
+     * @param key The saved buffer path
+     * @param buffer The buffer to save
+     * @return {@link WriteResult}
+     */
+    Single<@NonNull WriteResult> write(String locationName, String key, Buffer buffer);
+
+    /**
+     * Read a buffer from the storage. Use the default location.
+     * @param key The saved buffer path
+     * @return {@link ReadResult}
+     */
+    Single<@NonNull ReadResult> read(String key);
+
+    /**
+     * Read a buffer from the storage. Use the specified location.
+     * @param locationName The location name
+     * @param key The saved buffer path
+     * @return {@link ReadResult}
+     */
+    Single<@NonNull ReadResult> read(String locationName, String key);
+}
