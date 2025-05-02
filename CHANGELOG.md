@@ -1,3 +1,10 @@
+# [1.1.0-alpha.1](https://github.com/gravitee-io/gravitee-resource-storage-api/compare/1.0.0...1.1.0-alpha.1) (2025-05-02)
+
+
+### Features
+
+* add Storage & StorageResource interface ([df653a3](https://github.com/gravitee-io/gravitee-resource-storage-api/commit/df653a35632d310870347fb837e44273ed55232e))
+
 # 1.0.0 (2025-04-17)
 
 
