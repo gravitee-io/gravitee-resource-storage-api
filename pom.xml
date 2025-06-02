@@ -34,7 +34,7 @@
     <name>Gravitee.io APIM - Resource - Storage API</name>
 
     <properties>
-        <gravitee-apim.version>4.8.0-SNAPSHOT</gravitee-apim.version>
+        <gravitee-apim.version>4.8.0-alpha.1</gravitee-apim.version>
         <gravitee-resource-api.version>1.1.0</gravitee-resource-api.version>
     </properties>
 
