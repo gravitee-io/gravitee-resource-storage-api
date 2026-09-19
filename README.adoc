@@ -8,3 +8,13 @@ image:https://f.hubspotusercontent40.net/hubfs/7600448/gravitee-github-button.jp
 
 == Description
 The resource storage API contains the interfaces to implement in order to create a storage plugin for Gravitee.io APIM.
+
+== Compatibility matrix
+
+|===
+| Plugin version | APIM            | Java version
+
+| 1.x            | 4.8.x to latest | 21
+|===
+
+The *Java version* column is the bytecode level of the latest release of each line, which sets the minimum runtime able to load the artifact.
